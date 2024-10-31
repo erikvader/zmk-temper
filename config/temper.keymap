@@ -9,18 +9,15 @@
 #define THUMBS 30 31 32 33 34 35
 
 // https://github.com/urob/zmk-config#timeless-homerow-mods
-#define HM_TAP_TERM 280
-#define HM_QUICK_TAP 175
-#define HM_REQ_IDLE 150
-#define HM(TAP, OTHER_HAND) \
+#define HM(OTHER_HAND) \
   { \
       compatible = "zmk,behavior-hold-tap"; \
       #binding-cells = <2>; \
       flavor = "balanced"; \
-      tapping-term-ms = <HM_TAP_TERM>; \
-      quick-tap-ms = <HM_QUICK_TAP>; \
-      require-prior-idle-ms = <HM_REQ_IDLE>; \
-      bindings = <&kp>, <TAP>; \
+      tapping-term-ms = <280>; \
+      quick-tap-ms = <175>; \
+      require-prior-idle-ms = <150>; \
+      bindings = <&kp>, <&kp>; \
       hold-trigger-key-positions = <OTHER_HAND THUMBS>; \
       hold-trigger-on-release; \
   }
@@ -46,21 +43,14 @@
         };
     };
     behaviors {
-        lhm: left_homerow_mods HM(&kp, RIGHT_HAND);
-        rhm: right_homerow_mods HM(&kp, LEFT_HAND);
+        lhm: left_homerow_mods HM(RIGHT_HAND);
+        rhm: right_homerow_mods HM(LEFT_HAND);
         smartshift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
-        qdq: quote_double_quote {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SE_QUOT>, <&kp SE_DQUO>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        rhm_qdq: right_homerow_mods_quote HM(&qdq, LEFT_HAND);
     };
     keymap {
         compatible = "zmk,keymap";
@@ -70,7 +60,7 @@
 // ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐   ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
         &kp Q         &kp W         &kp E         &kp R         &kp T              &kp Y        &kp U         &kp I         &kp O         &kp P
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &lhm LALT A   &lhm LGUI S   &lhm LCTL D   &lhm LSFT F      &kp G              &kp H     &rhm LSFT J   &rhm LCTL K   &rhm LGUI L  &rhm_qdq LALT 0
+     &lhm LALT A   &lhm LGUI S   &lhm LCTL D   &lhm LSFT F      &kp G              &kp H     &rhm LSFT J   &rhm LCTL K   &rhm LGUI L  &rhm LALT SE_QUOT
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M       &kp COMMA      &kp DOT     &kp SE_MINS
 // └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
@@ -82,11 +72,11 @@
         lower_layer {
             bindings = <
 // ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐   ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
-      &kp TILDE    &kp SE_LABK   &kp SE_CIRC   &kp SE_RABK     &kp PRCNT          &kp STAR       &kp N7        &kp N8        &kp N9      &kp MINUS
+      &kp TILDE    &kp SE_LABK   &kp SE_CIRC   &kp SE_RABK     &kp PRCNT       &kp SE_ASTR     &kp N7         &kp N8        &kp N9       &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &kp CARET    &kp SE_LCBR    &trans       &kp SE_RCBR      &kp DLLR         &kp UNDER       &kp N4        &kp N5        &kp N6      &kp PLUS
+      &kp CARET    &kp SE_LCBR    &kp SE_EQL   &kp SE_RCBR      &kp DLLR       &kp SE_PLUS     &kp N4         &kp N5        &kp N6     &kp SE_DQUO
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &trans         &kp LT        &kp LBKT      &kp RBKT       &kp GT            &trans        &kp N1        &kp N2        &kp N3      &kp EQUAL
+      &trans         &kp LT        &kp LBKT      &kp RBKT       &kp GT            &trans       &kp N1         &kp N2        &kp N3       &trans
 // └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
                                     ___           ___            ___            &kp BSPC        ___          &kp N0
 //                             └─────────────┴─────────────┴─────────────┘   └─────────────┴─────────────┴─────────────┘
@@ -96,9 +86,9 @@
         raise_layer {
             bindings = <
 // ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐   ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
-        &trans     &kp SE_LBRC        &trans   &kp SE_RBRC        &trans       &kp SE_BSLS   &kp SE_PIPE   &kp SE_SLSH       &kp TAB     &trans
+        &trans     &kp SE_LBRC   &kp SE_AMPR   &kp SE_RBRC        &trans       &kp SE_BSLS   &kp SE_PIPE   &kp SE_SLSH       &kp TAB     &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      &sk LSHFT    &kp SE_LPRN      &trans     &kp SE_RPRN      &kp TAB           &kp LEFT      &kp DOWN       &kp UP      &kp RIGHT       &gresc
+      &sk LSHFT    &kp SE_LPRN     &SE_DLR     &kp SE_RPRN      &kp TAB           &kp LEFT      &kp DOWN       &kp UP      &kp RIGHT       &gresc
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &trans       &kp DEL        &trans        &trans        &trans            &trans        &kp RET       &trans        &trans        &trans
 // └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
