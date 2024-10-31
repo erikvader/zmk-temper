@@ -18,6 +18,11 @@
 #define RAISE 2
 #define ADJUST 3
 
+&sk {
+    // to avoid sticky shift potentially lasting for two keypresses instead of one
+    quick-release;
+};
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -55,10 +60,6 @@
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
-        };
-        &sk {
-            // to avoid sticky shift potentially lasting for two keypresses instead of one
-            quick-release;
         };
     };
     qdq: quote_double_quote {
