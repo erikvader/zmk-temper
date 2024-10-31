@@ -61,8 +61,25 @@
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
+        qdq: quote_double_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SE_QUOT>, <&kp SE_DQUO>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        rhm_quot: right_homerow_mods_quote {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAP_TERM>;
+            quick-tap-ms = <HM_QUICK_TAP>;
+            require-prior-idle-ms = <HM_REQ_IDLE>;
+            bindings = <&kp>, <&qdq>;
+            hold-trigger-key-positions = <LEFT_HAND THUMBS>;
+            hold-trigger-on-release;
+        };
     };
-    keym§ap {
+    keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -70,7 +87,7 @@
 // ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐   ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
         &kp Q         &kp W         &kp E         &kp R         &kp T              &kp Y        &kp U         &kp I         &kp O         &kp P
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &lhm LALT A   &lhm LGUI S   &lhm LCTL D   &lhm LSFT F      &kp G              &kp H     &rhm LSFT J   &rhm LCTL K   &rhm LGUI L  &rhm LALT SE_QUOT
+     &lhm LALT A   &lhm LGUI S   &lhm LCTL D   &lhm LSFT F      &kp G              &kp H     &rhm LSFT J   &rhm LCTL K   &rhm LGUI L  &rhm_qdq LALT 0
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M       &kp COMMA      &kp DOT     &kp SE_MINS
 // └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘

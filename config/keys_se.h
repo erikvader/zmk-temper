@@ -55,7 +55,7 @@
 #define SE_EXLM LS(SE_1)    // !
 #define SE_DQUO LS(SE_2)    // "
 #define SE_HASH LS(SE_3)    // #
-#define SE_EURO LS(SE_4)    // €
+#define SE_CURR LS(SE_4)    // ¤
 #define SE_PERC LS(SE_5)    // %
 #define SE_AMPR LS(SE_6)    // &
 #define SE_SLSH LS(SE_7)    // /
