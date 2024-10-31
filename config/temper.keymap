@@ -67,7 +67,7 @@
             bindings = <&kp SE_QUOT>, <&kp SE_DQUO>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        rhm_quot: right_homerow_mods_quote {
+        rhm_qdq: right_homerow_mods_quote {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
