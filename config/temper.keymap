@@ -34,6 +34,10 @@
     quick-release;
 };
 
+&caps_word {
+    continue-list = <SE_UNDS SE_MINS BACKSPACE DELETE>;
+}
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -51,6 +55,12 @@
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
+        qdq: quote_double_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SE_QUOT>, <&kp SE_DQUO>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -60,9 +70,9 @@
 // ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐   ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
         &kp Q         &kp W         &kp E         &kp R         &kp T              &kp Y        &kp U         &kp I         &kp O         &kp P
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &lhm LALT A   &lhm LGUI S   &lhm LCTL D   &lhm LSFT F      &kp G              &kp H     &rhm LSFT J   &rhm LCTL K   &rhm LGUI L  &rhm LALT SE_QUOT
+     &lhm LALT A   &lhm LGUI S   &lhm LCTL D   &lhm LSFT F      &kp G              &kp H     &rhm LSFT J   &rhm LCTL K   &rhm LGUI L  &rhm LALT SE_MINS
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M       &kp COMMA      &kp DOT     &kp SE_MINS
+        &kp Z         &kp X         &kp C         &kp V         &kp B              &kp N        &kp M       &kp COMMA      &kp DOT        &qdq
 // └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
                                  &smartshift    &lt LOWER BSPC   &kp ESC           &kp RET    &lt RAISE SPACE  &kp TAB
 //                             └─────────────┴─────────────┴─────────────┘   └─────────────┴─────────────┴─────────────┘
@@ -72,7 +82,7 @@
         lower_layer {
             bindings = <
 // ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐   ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
-         ___       &kp SE_LABK   &kp SE_CIRC   &kp SE_RABK       ___           &kp SE_ASTR     &kp N7         &kp N8        &kp N9         ___
+         ___       &kp SE_LABK   &kp SE_CIRC   &kp SE_RABK   &kp SE_MINS       &kp SE_ASTR     &kp N7         &kp N8        &kp N9         ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          ___       &kp SE_LCBR    &kp SE_EQL   &kp SE_RCBR   &kp SE_DQUO       &kp SE_PLUS     &kp N4         &kp N5        &kp N6         ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
