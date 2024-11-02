@@ -41,7 +41,7 @@
 #define SE_ODIA SEMICOLON // Ö
 #define SE_ADIA SINGLE_QUOTE // Ä
 #define SE_QUOT NON_US_HASH // '
-#define SE_LABK NON_US_BACKSLASH // <
+#define SE_LT   NON_US_BACKSLASH // <
 #define SE_Z    Z    // Z
 #define SE_X    X    // X
 #define SE_C    C    // C
@@ -66,7 +66,7 @@
 #define SE_GRV  LS(SE_ACUT) // `
 #define SE_CIRC LS(SE_DIAE) // ^ (dead)
 #define SE_ASTR LS(SE_QUOT) // *
-#define SE_RABK LS(SE_LABK) // >
+#define SE_GT   LS(SE_LT)   // >
 #define SE_SCLN LS(SE_COMM) // ;
 #define SE_COLN LS(SE_DOT)  // :
 #define SE_UNDS LS(SE_MINS) // _
@@ -80,5 +80,5 @@
 #define SE_RCBR RA(SE_0)    // }
 #define SE_BSLS RA(SE_PLUS) // (backslash)
 #define SE_TILD RA(SE_DIAE) // ~ (dead)
-#define SE_PIPE RA(SE_LABK) // |
+#define SE_PIPE RA(SE_LT)   // |
 #define SE_MICR RA(SE_M)    // µ
