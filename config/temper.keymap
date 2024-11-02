@@ -36,7 +36,7 @@
 
 &caps_word {
     continue-list = <SE_UNDS SE_MINS BACKSPACE DELETE>;
-}
+};
 
 / {
     conditional_layers {
