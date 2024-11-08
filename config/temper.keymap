@@ -22,6 +22,51 @@
       hold-trigger-on-release; \
   }
 
+#define CMB(name, keypos, binding) \
+  combo_ ## name { \
+      timeout-ms = <50>; \
+      bindings = <binding>; \
+      key-positions = <keypos>; \
+      require-prior-idle-ms = <175>; \
+  }
+
+#define POS_QW 0 1
+#define POS_WE 1 2
+#define POS_ER 2 3
+#define POS_RT 3 4
+#define POS_AS 10 11
+#define POS_SD 11 12
+#define POS_DF 12 13
+#define POS_FG 13 14
+#define POS_ZX 20 21
+#define POS_XC 21 22
+#define POS_CV 22 23
+#define POS_VB 23 24
+
+#define POS_QA 0 10
+#define POS_WS 1 11
+#define POS_ED 2 12
+#define POS_RF 3 13
+#define POS_TG 4 14
+#define POS_AZ 10 20
+#define POS_SX 11 21
+#define POS_DC 12 22
+#define POS_FV 13 23
+#define POS_GB 14 24
+
+#define POS_YU 5 6
+#define POS_UI 6 7
+#define POS_IO 7 8
+#define POS_OP 8 9
+#define POS_HJ 15 16
+#define POS_JK 16 17
+#define POS_KL 17 18
+#define POS_LL 18 19
+#define POS_NM 25 26
+#define POS_MDOT 26 27
+#define POS_DOTCOM 27 28
+#define POS_COMCOM 28 29
+
 #define ___ &trans
 
 #define DEFAULT 0
@@ -38,7 +83,15 @@
     continue-list = <SE_UNDS SE_MINS BACKSPACE DELETE>;
 };
 
+&lt {
+    quick-tap-ms = <175>;
+}
+
 / {
+    combos {
+        combos = "zmk,combos";
+        CMB(dollar, POS_RF, &kp SE_DLR);
+    };
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
