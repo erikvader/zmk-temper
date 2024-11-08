@@ -85,7 +85,7 @@
 
 &lt {
     quick-tap-ms = <175>;
-}
+};
 
 / {
     combos {
