@@ -61,11 +61,22 @@
 #define POS_HJ 15 16
 #define POS_JK 16 17
 #define POS_KL 17 18
-#define POS_LL 18 19
+#define POS_LMIN 18 19
 #define POS_NM 25 26
-#define POS_MDOT 26 27
-#define POS_DOTCOM 27 28
-#define POS_COMCOM 28 29
+#define POS_MCOM 26 27
+#define POS_COMDOT 27 28
+#define POS_DOTMAX 28 29
+
+#define POS_YH 5 15
+#define POS_UJ 6 16
+#define POS_IK 7 17
+#define POS_OL 8 18
+#define POS_PMIN 9 19
+#define POS_HN 15 25
+#define POS_JM 16 26
+#define POS_KCOM 17 27
+#define POS_LDOT 18 28
+#define POS_MINMAX 19 29
 
 #define ___ &trans
 
@@ -91,6 +102,10 @@
     combos {
         compatible = "zmk,combos";
         CMB(dollar, POS_RF, &kp SE_DLR);
+        CMB(bslash, POS_DC, &kp SE_BSLS);
+        CMB(slash, POS_KCOM, &kp SE_SLSH);
+        CMB(lpar, POS_SD, &kp SE_LPRN);
+        CMB(rpar, POS_DF, &kp SE_RPRN);
     };
     conditional_layers {
         compatible = "zmk,conditional-layers";
