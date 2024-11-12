@@ -5,9 +5,18 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+// key positions
 #define RIGHT_HAND 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
 #define LEFT_HAND 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
 #define THUMBS 30 31 32 33 34 35
+
+#define ___ &trans
+
+// layers
+#define DEFAULT 0
+#define LOWER 1
+#define RAISE 2
+#define ADJUST 3
 
 // https://github.com/urob/zmk-config#timeless-homerow-mods
 #define HM(OTHER_HAND) \
@@ -25,18 +34,12 @@
 
 #define CMB(name, keypos, binding) \
   combo_ ## name { \
+      layers = <DEFAULT> \
       timeout-ms = <50>; \
       bindings = <binding>; \
       key-positions = <keypos>; \
       require-prior-idle-ms = <175>; \
   }
-
-#define ___ &trans
-
-#define DEFAULT 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
 
 &sk {
     // to avoid sticky shift potentially lasting for two keypresses instead of one
