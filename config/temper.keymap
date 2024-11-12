@@ -32,6 +32,9 @@
       hold-trigger-on-release; \
   }
 
+// This isn't perfect when overlapping with homerowmods (like SD and DF) since chording
+// several of them will trigger a combo instead. The fix is tracked here
+// https://github.com/zmkfirmware/zmk/issues/544, support for tap-only combos.
 #define CMB(name, keypos, binding) \
   combo_ ## name { \
       layers = <DEFAULT>; \
