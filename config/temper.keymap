@@ -34,7 +34,7 @@
 
 #define CMB(name, keypos, binding) \
   combo_ ## name { \
-      layers = <DEFAULT> \
+      layers = <DEFAULT>; \
       timeout-ms = <50>; \
       bindings = <binding>; \
       key-positions = <keypos>; \
