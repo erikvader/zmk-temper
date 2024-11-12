@@ -58,8 +58,8 @@
     combos {
         compatible = "zmk,combos";
 
-        CMB(bslash, POS_DC, &kp SE_BSLS);
-        CMB(and, POS_ED, &kp SE_AMPR);
+        CMB(bslash, POS_ED, &kp SE_BSLS);
+        CMB(and, POS_DC, &kp SE_AMPR);
         CMB(lpar, POS_SD, &kp SE_LPRN);
         CMB(rpar, POS_DF, &kp SE_RPRN);
         CMB(lbrack, POS_WE, &kp SE_LBRC);
@@ -74,8 +74,8 @@
         CMB(staket, POS_GB, &kp SE_HASH);
 
         CMB(dollar, POS_YH, &kp SE_DLR);
-        CMB(slash, POS_KCOM, &kp SE_SLSH);
-        CMB(or, POS_IK, &kp SE_PIPE);
+        CMB(slash, POS_IK, &kp SE_SLSH);
+        CMB(or, POS_KCOM, &kp SE_PIPE);
         CMB(lbrace, POS_JK, &kp SE_LCBR);
         CMB(rbrace, POS_KL, &kp SE_RCBR);
         CMB(lt, POS_UI, &kp SE_LT);
