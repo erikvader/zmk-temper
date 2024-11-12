@@ -101,11 +101,36 @@
 / {
     combos {
         compatible = "zmk,combos";
-        CMB(dollar, POS_RF, &kp SE_DLR);
+
         CMB(bslash, POS_DC, &kp SE_BSLS);
-        CMB(slash, POS_KCOM, &kp SE_SLSH);
+        CMB(and, POS_ED, &kp SE_AMPR);
         CMB(lpar, POS_SD, &kp SE_LPRN);
         CMB(rpar, POS_DF, &kp SE_RPRN);
+        CMB(lbrack, POS_WE, &kp SE_LBRC);
+        CMB(rbrack, POS_ER, &kp SE_RBRC);
+        CMB(caret, POS_TG, &kp SE_CIRC);
+        CMB(excl, POS_RF, &kp SE_EXLM);
+        CMB(btick, POS_XC, &kp SE_GRV);
+        CMB(ftick, POS_CV, &kp SE_ACUT);
+        CMB(plus, POS_FV, &kp SE_PLUS);
+        CMB(snabela, POS_SX, &kp SE_AT);
+        CMB(tilde, POS_WS, &kp SE_TILD);
+        CMB(staket, POS_GB, &kp SE_HASH);
+
+        CMB(dollar, POS_YH, &kp SE_DLR);
+        CMB(slash, POS_KCOM, &kp SE_SLSH);
+        CMB(or, POS_IK, &kp SE_PIPE);
+        CMB(lbrace, POS_JK, &kp SE_LCBR);
+        CMB(rbrace, POS_KL, &kp SE_RCBR);
+        CMB(lt, POS_UI, &kp SE_LT);
+        CMB(gt, POS_IO, &kp SE_GT);
+        CMB(ques, POS_UJ, &kp SE_QUES);
+        CMB(ouu, POS_OL, &kp SE_ARNG);
+        CMB(aee, POS_LDOT, &kp SE_ADIA);
+        CMB(oee, POS_COMDOT, &kp SE_ODIA);
+        CMB(mult, POS_JM, &kp SE_ASTR);
+        CMB(perc, POS_HN, &kp SE_PERC);
+        CMB(eql, POS_MCOM, &kp SE_EQL);
     };
     conditional_layers {
         compatible = "zmk,conditional-layers";
