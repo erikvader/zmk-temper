@@ -63,7 +63,7 @@
 
         combo_mo_adjust {
             layers = <DEFAULT>;
-            timeout = <50>;
+            timeout-ms = <50>;
             bindings = <&mo ADJUST>;
             key-positions = <32 33>;
             require-prior-idle-ms = <175>;
