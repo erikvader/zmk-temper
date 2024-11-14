@@ -61,6 +61,14 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_mo_adjust {
+            layers = <DEFAULT>;
+            timeout = <50>;
+            bindings = <&mo ADJUST>;
+            key-positions = <32 33>;
+            require-prior-idle-ms = <175>;
+        };
+
         CMB(bslash, POS_ED, &kp SE_BSLS);
         CMB(and, POS_DC, &kp SE_AMPR);
         CMB(lpar, POS_SD, &kp SE_LPRN);
@@ -90,13 +98,6 @@
         CMB(mult, POS_JM, &kp SE_ASTR);
         CMB(perc, POS_HN, &kp SE_PERC);
         CMB(eql, POS_MCOM, &kp SE_EQL);
-    };
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
-        };
     };
     behaviors {
         lhm: left_homerow_mods HM(RIGHT_HAND);
@@ -140,7 +141,7 @@
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
          ___           ___           ___           ___           ___             &kp DOT       &kp N1         &kp N2        &kp N3      &kp COMMA
 // └─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┘
-                                     ___           ___           ___            &kp BSPC         ___          &kp N0
+                                     ___           ___           ___            &kp BSPC       &kp N0       &kp SPACE
 //                             └─────────────┴─────────────┴─────────────┘   └─────────────┴─────────────┴─────────────┘
             >;
         };
