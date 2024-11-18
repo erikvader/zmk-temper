@@ -63,7 +63,6 @@
         compatible = "zmk,combos";
 
         combo_mo_adjust {
-            layers = <DEFAULT>;
             timeout-ms = <50>;
             bindings = <&mo ADJUST>;
             key-positions = <32 33>;
