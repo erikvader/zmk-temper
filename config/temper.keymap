@@ -88,8 +88,8 @@
         CMB(btick, POS_XC, &kp SE_GRV);
         CMB(ftick, POS_CV, &kp SE_ACUT);
         CMB(plus, POS_FV, &kp SE_PLUS);
-        CMB(snabela, POS_SX, &kp SE_AT);
-        CMB(tilde, POS_WS, &kp SE_TILD);
+        CMB(snabela, POS_WS, &kp SE_AT);
+        CMB(tilde, POS_SX, &kp SE_TILD);
         CMB(staket, POS_GB, &kp SE_HASH);
 
         CMB(dollar, POS_YH, &kp SE_DLR);
