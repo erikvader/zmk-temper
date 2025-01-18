@@ -59,6 +59,13 @@
 };
 
 / {
+    macros {
+        ZMK_MACRO(bothparens, bindings = <&kp SE_LPRN &kp SE_RPRN>;)
+        ZMK_MACRO(bothbracks, bindings = <&kp SE_LBRC &kp SE_RBRC>;)
+        ZMK_MACRO(bothbraces, bindings = <&kp SE_LCBR &kp SE_RCBR>;)
+        ZMK_MACRO(bothltgt, bindings = <&kp SE_LT &kp SE_GT>;)
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -92,6 +99,9 @@
         CMB(tilde, POS_SX, &kp SE_TILD);
         CMB(staket, POS_GB, &kp SE_HASH);
 
+        CMB(bothparens, POS_SDF, &bothparens);
+        CMB(bothbracks, POS_WER, &bothbracks);
+
         CMB(dollar, POS_YH, &kp SE_DLR);
         CMB(slash, POS_IK, &kp SE_SLSH);
         CMB(or, POS_KCOM, &kp SE_PIPE);
@@ -106,6 +116,9 @@
         CMB(mult, POS_JM, &kp SE_ASTR);
         CMB(perc, POS_HN, &kp SE_PERC);
         CMB(eql, POS_MCOM, &kp SE_EQL);
+
+        CMB(bothbraces, POS_JKL, &bothbraces);
+        CMB(bothltgt, POS_UIO, &bothltgt);
     };
     behaviors {
         lhm: left_homerow_mods HM(RIGHT_HAND);

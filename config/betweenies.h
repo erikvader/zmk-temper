@@ -45,3 +45,11 @@
 #define POS_KCOM 17 27
 #define POS_LDOT 18 28
 #define POS_MINMAX 19 29
+
+#define POS_WER 1 2 3
+#define POS_SDF 11 12 13
+#define POS_XCV 21 22 23
+
+#define POS_UIO 6 7 8
+#define POS_JKL 16 17 18
+#define POS_MCOMDOT 26 27 28
