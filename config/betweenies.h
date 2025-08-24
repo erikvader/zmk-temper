@@ -53,3 +53,8 @@
 #define POS_UIO 6 7 8
 #define POS_JKL 16 17 18
 #define POS_MCOMDOT 26 27 28
+
+#define POS_BOTH_THUMBS 32 33
+#define POS_BOTH_RIGHT 33 35
+#define POS_BOTH_LEFT 30 32
+

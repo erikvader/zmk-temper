@@ -34,16 +34,21 @@
       hold-trigger-on-release; \
   }
 
+#define CMB_TIMEOUT 30
+#define CMB_IDLE 100
+#define CMB_SLOW_TIMEOUT 50
+#define CMB_SLOW_IDLE 175
+
 // This isn't perfect when overlapping with homerowmods (like SD and DF) since chording
 // several of them will trigger a combo instead. The fix is tracked here
 // https://github.com/zmkfirmware/zmk/issues/544, support for tap-only combos.
 #define CMB(name, keypos, binding) \
   combo_ ## name { \
       layers = <DEFAULT>; \
-      timeout-ms = <50>; \
+      timeout-ms = <CMB_TIMEOUT>; \
       bindings = <binding>; \
       key-positions = <keypos>; \
-      require-prior-idle-ms = <175>; \
+      require-prior-idle-ms = <CMB_IDLE>; \
   }
 
 &sk {
@@ -71,26 +76,26 @@
         compatible = "zmk,combos";
 
         combo_mo_adjust {
-            timeout-ms = <50>;
+            timeout-ms = <CMB_SLOW_TIMOEUT>;
             bindings = <&mo ADJUST>;
-            key-positions = <32 33>;
-            require-prior-idle-ms = <175>;
+            key-positions = <POS_BOTH_THUMBS>;
+            require-prior-idle-ms = <CMB_SLOW_IDLE>;
         };
 
         combo_tog_game {
             layers = <DEFAULT GAME>;
-            timeout-ms = <50>;
+            timeout-ms = <CMB_SLOW_TIMOEUT>;
             bindings = <&tog GAME>;
-            key-positions = <33 35>;
-            require-prior-idle-ms = <175>;
+            key-positions = <POS_BOTH_RIGHT>;
+            require-prior-idle-ms = <CMB_SLOW_IDLE>;
         };
 
         combo_tog_one {
             layers = <DEFAULT ONE>;
-            timeout-ms = <50>;
+            timeout-ms = <CMB_SLOW_TIMOEUT>;
             bindings = <&tog ONE>;
-            key-positions = <30 32>;
-            require-prior-idle-ms = <175>;
+            key-positions = <POS_BOTH_LEFT>;
+            require-prior-idle-ms = <CMB_SLOW_IDLE>;
         };
 
         CMB(bslash, POS_ED, &kp SE_BSLS);
