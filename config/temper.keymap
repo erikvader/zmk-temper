@@ -76,7 +76,7 @@
         compatible = "zmk,combos";
 
         combo_mo_adjust {
-            timeout-ms = <CMB_SLOW_TIMOEUT>;
+            timeout-ms = <CMB_SLOW_TIMEOUT>;
             bindings = <&mo ADJUST>;
             key-positions = <POS_BOTH_THUMBS>;
             require-prior-idle-ms = <CMB_SLOW_IDLE>;
@@ -84,7 +84,7 @@
 
         combo_tog_game {
             layers = <DEFAULT GAME>;
-            timeout-ms = <CMB_SLOW_TIMOEUT>;
+            timeout-ms = <CMB_SLOW_TIMEOUT>;
             bindings = <&tog GAME>;
             key-positions = <POS_BOTH_RIGHT>;
             require-prior-idle-ms = <CMB_SLOW_IDLE>;
@@ -92,7 +92,7 @@
 
         combo_tog_one {
             layers = <DEFAULT ONE>;
-            timeout-ms = <CMB_SLOW_TIMOEUT>;
+            timeout-ms = <CMB_SLOW_TIMEOUT>;
             bindings = <&tog ONE>;
             key-positions = <POS_BOTH_LEFT>;
             require-prior-idle-ms = <CMB_SLOW_IDLE>;
